@@ -1,0 +1,253 @@
+/* ==========================================================================
+   🌌 GLOBAL THEME & VARIABLES (테마 시스템 및 전역 변수 정의)
+   ========================================================================== */
+:root {
+    /* 눈이 편안한 딥 다크 톤 바탕 */
+    --bg-main: #0b0f17;
+    /* 카드의 입체감을 살리기 위한 서브 레이어 다크 */
+    --bg-surface: #141a24;
+    /* 도커 감성의 하이테크 일렉트릭 네온 블루 */
+    --color-accent: #00e5ff;
+    /* 컴파일 터미널의 폰트 강조용 민트 그린 */
+    --color-mint: #00ffcc;
+    
+    /* 텍스트 시각적 위계 표준화 */
+    --text-primary: #f0f4f8;
+    --text-secondary: #94a3b8;
+    --border-color: #222f43;
+    
+    /* 폰트 아키텍처: 가독성 높은 산세리프와 코딩 감성 모노스페이스의 융합 */
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+}
+
+/* 요소 초기화 및 부드러운 스크롤 매커니즘 활성화 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   🏗️ CONTAINER LAYOUT (컨테이너 배치 시스템)
+   ========================================================================== */
+header, main, footer {
+    max-width: 840px; /* 본문 가독성 유지를 위한 최적의 황금 폭 너비 제한 */
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+section {
+    padding: 3.5rem 0;
+    border-bottom: 1px solid var(--border-color); /* 모던한 하방 분할 레이어선 */
+}
+
+/* ==========================================================================
+   👑 HEADER & NAVIGATION (상단 프로필 및 메뉴 인터페이스)
+   ========================================================================== */
+header {
+    text-align: center;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+header h1 {
+    font-family: var(--font-mono);
+    font-size: 2.6rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    /* 트렌디한 네온 그라데이션 타이포그래피 처리 */
+    background: linear-gradient(135deg, var(--color-accent), var(--color-mint));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    font-family: var(--font-mono);
+}
+
+nav {
+    margin-top: 2.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    flex-wrap: wrap; /* 모바일 기기에서 메뉴 아이템이 넘칠 때 자동 줄바꿈 처리 */
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); /* 자연스러운 애니메이션 감속 속도 */
+}
+
+nav a:hover {
+    color: var(--color-accent);
+    border-color: rgba(0, 229, 255, 0.2);
+    background-color: rgba(0, 229, 255, 0.05);
+}
+
+/* ==========================================================================
+   🧬 TYPOGRAPHY & TAGS (타이포그래피 및 인라인 요소)
+   ========================================================================== */
+h2 {
+    font-family: var(--font-mono);
+    font-size: 1.6rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+main p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+}
+
+main strong {
+    color: var(--color-mint); /* 강력 강조 단어에 민트 컬러 하이라이팅 */
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   📦 PROJECT CARDS (입체감을 부여한 학습 기록 아카이브 카드)
+   ========================================================================== */
+.project-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 1.5rem;
+    /* 미세한 암부 그림자를 통한 시각적 부유감(Lift) 형성 */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    /* 3D 기하학적 움직임을 위한 부드러운 트랜지션 처리 */
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* 호버 시 위쪽 공간으로 튕겨 오르는 입체 메커니즘 */
+    border-color: rgba(0, 229, 255, 0.4); /* 네온 테두리 광원 효과 유도 */
+    box-shadow: 0 12px 30px rgba(0, 229, 255, 0.08);
+}
+
+.project-card h3 {
+    font-family: var(--font-mono);
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 0.8rem;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+/* 기술 스택 칩셋 뱃지 디자인 */
+.tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    background-color: rgba(0, 229, 255, 0.08); /* 반투명 백그라운드 코팅 */
+    border: 1px solid rgba(0, 229, 255, 0.15);
+    padding: 0.3rem 0.7rem;
+    border-radius: 6px;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   📬 CONTACT & LINKS (소통 창구 레이아웃)
+   ========================================================================== */
+#contact ul {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+#contact li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#contact strong {
+    font-family: var(--font-mono);
+    color: var(--text-primary);
+    min-width: 80px; /* 라벨 열 맞춤 정렬을 위한 하드코딩 최소 폭 배정 */
+}
+
+#contact a {
+    color: var(--color-accent);
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(0, 229, 255, 0.4);
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+#contact a:hover {
+    color: var(--color-mint);
+    border-bottom-color: var(--color-mint);
+}
+
+/* ==========================================================================
+   🏁 FOOTER (하단 카피라이트 정보 영역)
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+footer p {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   📱 RESPONSIVE INTERFACE (스마트폰 기기 붕괴 예방 미디어 쿼리)
+   ========================================================================== */
+@media (max-width: 640px) {
+    header {
+        padding-top: 3.5rem;
+        padding-bottom: 2rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 2.5rem 0;
+    }
+
+    .project-card {
+        padding: 1.25rem;
+    }
+
+    #contact li {
+        flex-direction: column; /* 모바일의 좁은 폭 환경에서 텍스트 겹침 방지를 위해 수직 정렬로 강제 전환 */
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+}
