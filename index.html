@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>차하성 | C언어 개발 포트폴리오</title>
+    <title>20261141 | 개인 웹페이지</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <h1>차하성 포트폴리오</h1>
-        <p>컴퓨터공학과 1학년 | 기본기를 다지며 성장하는 개발자</p>
+        <h1>개인 웹페이지</h1>
+        <p>컴퓨터공학과 1학년 | 깃허브 활용한 웹페이지</p>
         
         <nav>
             <ul>
                 <li><a href="#intro">자기소개</a></li>
-                <li><a href="#c-archive">C언어 학습 기록 보관함</a></li>
+                <li><a href="#c-archive">개인 기록</a></li>
                 <li><a href="#contact">연락처 & 링크</a></li>
             </ul>
         </nav>
@@ -26,43 +26,128 @@
         <section id="intro">
             <h2>👋 자기소개</h2>
             <p>
-                컴퓨터공학의 근간을 이루는 C언어를 깊이 있게 탐구하고 있습니다. 
-                가상화 기술인 <strong>Docker</strong> 환경 내에서 <strong>VS Code</strong>와 GCC 컴파일러를 연동하여 
-                체계적이고 독립적인 개발 환경을 구축해 실습을 진행 중입니다. 효율적인 코드 작성과 메모리 관리에 관심이 많습니다.
+                올해로 컴퓨터공학과 1학년이 된 새내기입니다. 
+                과제를 통해 <strong>Docker</strong> 환경 내에서 <strong>VS Code</strong>와 GCC 컴파일러를 연동하여 
+                개인 웹페이지를 만들어 보았습니다.
             </p>
         </section>
 
-        <section id="c-archive">
-            <h2>📚 C언어 학습 기록 보관함</h2>
-            <p>가상 컨테이너 환경에서 컴파일하고 빌드한 핵심 실습 과제물입니다.</p>
+<section id="c-archive">
+            <h2>📚 개인 기록 보관함</h2>
+            <p>개인 웹페이지 및 학업 스케줄 관리 공간입니다.</p>
 
             <article class="project-card">
-                <h3>1. 조건문 및 반복문 알고리즘 실습</h3>
-                <p>배열 내부의 데이터를 특정 정렬 알고리즘을 통해 순서대로 정렬하고, 효율적인 반복 제어문을 설계하는 실습과제입니다.</p>
-                <p>
+                <h3>1. 학교 일정</h3>
+                <p>2026.06.15(월) ~ 2026.06.19(금) 기말시험</p>
+                <p>2026.06.22(월) ~ 2026.08.31(월) 여름방학</p>
+                <p>2026.06.22(월) ~ 2026.07.10(금) 여름 계절학기</p>
+                <p>2026.06.30(화) ~ 2026.07.02(목) 성적 확인 및 이의신청</p>
+                <p>2026.08.19(수) ~ 2026.08.21(금) 2026학년도 2학기 재학생 수강신청</p>
+                <p>2026.09.01(화) 2026학년도 2학기 개강</p>
+                
+                <div class="card-tags">
                     <span class="tag">Docker (Ubuntu)</span>
                     <span class="tag">GCC Compiler</span>
                     <span class="tag">C Language</span>
-                </p>
+                </div>
             </article>
 
             <article class="project-card">
-                <h3>2. 포인터 기반 동적 메모리 할당 구조체 구현</h3>
-                <p>C언어의 핵심인 포인터 개념을 활용하여 런타임 환경에서 메모리를 동적으로 할당하고 구조체 배열을 제어하는 고급 실습입니다.</p>
-                <p>
-                    <span class="tag">Memory Allocation</span>
-                    <span class="tag">Pointers</span>
-                    <span class="tag">VS Code Remote-Containers</span>
-                </p>
+                <h3>2. 개인 시간표</h3>
+                <p>컴퓨터공학과 1학년 1학기 학업 스케줄 매트릭스입니다.</p>
+                
+                <div class="card-tags">
+                    <span class="tag">Timetable</span>
+                    <span class="tag">Academic Schedule</span>
+                    <span class="tag">CS Curriculum</span>
+                </div>
+
+                <table class="timetable-table">
+                    <caption>* 2026학년도 1학기 강의 스케줄러</caption>
+                    <thead>
+                        <tr>
+                            <th>시간</th>
+                            <th>월</th>
+                            <th>화</th>
+                            <th>수</th>
+                            <th>목</th>
+                            <th>금</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>오전 9시 ~ 11시</th>
+                            <td class="subject-cs" rowspan="2">***컴퓨터프로그래밍기초<br><small>정문성 공다B410-프로그램실습실</small></td>
+                            <td class="subject-empty">─</td>
+                            <td class="subject-cs" rowspan="2">***컴퓨터프로그래밍기초<br><small>정문성 공다B410-프로그램실습실</small></td>
+                            <td class="subject-empty">─</td>
+                            <td class="subject-cs" rowspan="2">AI시대의컴퓨팅사고<br><small>김선경 정보207정보실습실A</small></td>
+                        </tr>
+                        <tr>
+                            <th>오전 10시 ~ 11시</th>
+                            <td class="subject-empty">─</td>
+                            <td class="subject-empty">─</td>
+                        </tr>
+                        <tr>
+                            <th>오전 11시 ~ 오후 12시</th>
+                            <td class="subject-cs" rowspan="2">컴퓨터공학입문<br><small>정문성 공다A414-VR실습실</small></td>
+                            <td class="subject-general" rowspan="2">사고와표현<br><small>정연희 인209-일반A / V강의실</small></td>
+                            <td class="subject-cs" rowspan="2">컴퓨터공학입문<br><small>정문성 공다A414-VR실습실</small></td>
+                            <td class="subject-empty">─</td>
+                            <td class="subject-empty">─</td>
+                        </tr>
+                        <tr>
+                            <th>오후 12시 ~ 오후 1시</th>
+                            <td class="subject-empty">─</td>
+                            <td class="subject-empty">─</td>
+                        </tr>
+                        <tr>
+                            <th>오후 1시 ~ 오후 2시</th>
+                            <td class="subject-general" rowspan="2">인공지능과인터넷윤리<br><small>박효진 인104-통합강의실</small></td>
+                            <td class="subject-empty">─</td>
+                            <td class="subject-cs" rowspan="2">R과기초데이터분석<br><small>김원배 정보407정보실습실G</small></td>
+                            <td class="subject-empty">─</td>
+                            <td class="subject-empty">─</td>
+                        </tr>
+                        <tr>
+                            <th>오후 2시 ~ 오후 3시</th>
+                            <td class="subject-empty">─</td>
+                            <td class="subject-empty">─</td>
+                        </tr>
+                        <tr>
+                            <th>오후 3시 ~ 오후 4시</th>
+                            <td class="subject-empty">─</td>
+                            <td class="subject-empty">─</td>
+                            <td class="subject-cs" rowspan="2">알기쉬운빅데이터와시각화<br><small>김지연 정보406정보실습실H</small></td>
+                            <td class="subject-empty">─</td>
+                            <td class="subject-empty">─</td>
+                        </tr>
+                        <tr>
+                            <th>오후 4시 ~ 오후 5시</th>
+                            <td class="subject-empty">─</td>
+                            <td class="subject-empty">─</td>
+                            <td class="subject-empty">─</td>
+                            <td class="subject-empty">─</td>
+                        </tr>
+                        <tr>
+                            <th>오후 5시 ~ 오후 6시</th>
+                            <td class="subject-empty">─</td>
+                            <td class="subject-empty">─</td>
+                            <td class="subject-empty">─</td>
+                            <td class="subject-empty">─</td>
+                            <td class="subject-empty">─</td>
+                        </tr>
+                    </tbody>
+                </table>
             </article>
         </section>
 
         <section id="contact">
             <h2>📫 깃허브 링크 및 연락처</h2>
-            <p>저의 코드 베이스를 확인하거나 협업을 위한 연락은 아래 채널을 이용해 주세요.</p>
+            <p>깃허브나 개인 이메일입니다.</p>
             <ul>
                 <li><strong>GitHub:</strong> <a href="https://github.com" target="_blank" rel="noopener noreferrer">github.com (프로필 방문하기)</a></li>
-                <li><strong>Email:</strong> <a href="mailto:your-email@example.com">이메일 보내기 (your-email@example.com)</a></li>
+                <li><strong>Email:</strong> <a href="mailto:20261141@daejin.ac.kr">이메일 보내기 (20261141@daejin.ac.kr)</a></li>
             </ul>
         </section>
 

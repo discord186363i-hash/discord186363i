@@ -1,4 +1,14 @@
 /* ==========================================================================
+   🔤 CUSTOM FONT DECLARATION (커스텀 폰트 엔진 등록)
+   ========================================================================== */
+@font-face {
+    font-family: 'akid'; /* CSS 내부에서 사용할 고유 폰트 별명 정의 */
+    src: url('./akid.ttf') format('truetype'); /* 탐색기에 있는 파일명과 정확히 매칭 */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ==========================================================================
    🌌 GLOBAL THEME & VARIABLES (테마 시스템 및 전역 변수 정의)
    ========================================================================== */
 :root {
@@ -16,8 +26,8 @@
     --text-secondary: #94a3b8;
     --border-color: #222f43;
     
-    /* 폰트 아키텍처: 가독성 높은 산세리프와 코딩 감성 모노스페이스의 융합 */
-    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    /* 폰트 아키텍처: 커스텀 akid 서체를 최우선 순위로 배치 */
+    --font-sans: 'akid', 'Inter', system-ui, -apple-system, sans-serif;
     --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
 }
 
@@ -62,7 +72,7 @@ header {
 }
 
 header h1 {
-    font-family: var(--font-mono);
+    font-family: var(--font-sans); /* 대제목에도 커스텀 폰트 감성 부여 */
     font-size: 2.6rem;
     font-weight: 800;
     letter-spacing: -0.05em;
@@ -113,7 +123,7 @@ nav a:hover {
    🧬 TYPOGRAPHY & TAGS (타이포그래피 및 인라인 요소)
    ========================================================================== */
 h2 {
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     font-size: 1.6rem;
     color: var(--text-primary);
     margin-bottom: 1.5rem;
@@ -151,7 +161,7 @@ main strong {
 }
 
 .project-card h3 {
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     font-size: 1.3rem;
     color: var(--text-primary);
     margin-bottom: 0.8rem;
@@ -177,6 +187,75 @@ main strong {
 }
 
 /* ==========================================================================
+   📅 TIMETABLE MATRIX STYLES (주간 시간표 전역 디자인 시스템)
+   ========================================================================== */
+table.timetable-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    background-color: #0f141c; /* 시간표 내부 가독성을 위한 인텐스 블랙 배경 복사 */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+table.timetable-table caption {
+    caption-side: top;
+    text-align: left;
+    padding: 0.5rem;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+}
+
+table.timetable-table th {
+    background-color: rgba(255, 255, 255, 0.03);
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-weight: 600;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+}
+
+table.timetable-table thead th {
+    background-color: rgba(0, 229, 255, 0.05);
+    color: var(--color-accent);
+}
+
+table.timetable-table td {
+    padding: 0.85rem;
+    border: 1px solid var(--border-color);
+    font-weight: 500;
+    vertical-align: middle;
+}
+
+/* 🎨 과목 특성별 컬러 하이라이팅 셀 분류 */
+.subject-cs {
+    background-color: rgba(0, 229, 255, 0.08); /* 전공 전용 블루 틴트 */
+    color: #e0f7fa;
+    border-left: 3px solid var(--color-accent) !important;
+}
+
+.subject-general {
+    background-color: rgba(0, 255, 204, 0.06); /* 교양 전용 민트 틴트 */
+    color: #e0f2f1;
+}
+
+.subject-lunch {
+    background-color: rgba(255, 255, 255, 0.02);
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+.subject-empty {
+    color: #334155;
+    font-family: var(--font-mono);
+}
+
+/* ==========================================================================
    📬 CONTACT & LINKS (소통 창구 레이아웃)
    ========================================================================== */
 #contact ul {
@@ -192,7 +271,7 @@ main strong {
 }
 
 #contact strong {
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     color: var(--text-primary);
     min-width: 80px; /* 라벨 열 맞춤 정렬을 위한 하드코딩 최소 폭 배정 */
 }
@@ -246,8 +325,16 @@ footer p {
     }
 
     #contact li {
-        flex-direction: column; /* 모바일의 좁은 폭 환경에서 텍스트 겹침 방지를 위해 수직 정렬로 강제 전환 */
+        flex-direction: column; /* 수직 정렬로 강제 전환 */
         align-items: flex-start;
         gap: 0.25rem;
+    }
+
+    /* 👇 시간표 모바일 반응형 압축 공식을 미디어 쿼리 내부에 병합 */
+    table.timetable-table {
+        font-size: 0.75rem;
+    }
+    table.timetable-table th, table.timetable-table td {
+        padding: 0.5rem 0.25rem;
     }
 }
